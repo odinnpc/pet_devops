@@ -137,11 +137,6 @@ Top 5 response status codes:
 401 - 2 requests
 304 - 1 request
 
-Top 5 user agents:
-DigitalOcean Uptime Probe 0.22.0 (https://digitalocean.com) - 65 requests
-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ... - 5 requests
-```
-
 ## How It Works
 
 * **IP addresses** – extracted from the first field of the log.
