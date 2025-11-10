@@ -1,0 +1,20 @@
+name: Deploy to Nest
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+  
+jobs:
+  deploy:
+    environment:
+      name: nest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: arnav-kr/nest-deploy@1.0.0
+        with:
+          deployUrl: ${{ secrets.DEPLOY_URL }}
+          deployToken: ${{ secrets.DEPLOY_TOKEN }}
+    

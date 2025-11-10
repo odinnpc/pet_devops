@@ -1,0 +1,32 @@
+name: "Deploy to Nest"
+author: "Arnav Kumar"
+branding:
+  icon: "feather"
+  color: "black"
+description: "Deploy to your Nest instance as a Docker container"
+
+runs:
+  using: composite
+  steps:
+    - name: Pull latest changes
+      shell: bash
+      id: pull
+      run: |
+        curl -sSH 'Authorization: ${{ inputs.deployToken }}' ${{ inputs.deployUrl }}/pull
+    - name: Build Docker image
+      shell: bash
+      id: build
+      run: |
+        curl -sSH 'Authorization: ${{ inputs.deployToken }}' ${{ inputs.deployUrl }}/build
+    - name: Deploy Docker image
+      shell: bash
+      id: deploy
+      run: |
+        curl -sSH 'Authorization: ${{ inputs.deployToken }}' ${{ inputs.deployUrl }}/run
+inputs:
+  deployToken:
+    description: "Your Project Deploy Token from nest-deploy cli"
+    required: true
+  deployUrl:
+    description: "Your Project Deploy URL from nest-deploy cli"
+    required: true

@@ -1,0 +1,28 @@
+{
+  "name": "nest-deploy",
+  "version": "1.1.0",
+  "description": "Nest Deploy Manager",
+  "bin": "nest-deploy.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file=.env index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnav-kr/nest-deploy.git"
+  },
+  "keywords": [
+    "nest",
+    "deploy",
+    "hackclub"
+  ],
+  "author": "arnav-kr (https://github.com/arnav-kr)",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/arnav-kr/nest-deploy/issues"
+  },
+  "homepage": "https://github.com/arnav-kr/nest-deploy#readme",
+  "dependencies": {
+    "fastify": "^4.28.1"
+  }
+}
