@@ -1,0 +1,23 @@
+{
+  "name": "pet_devops",
+  "version": "1.0.0",
+  "description": "A small, portable Bash script that gathers basic server performance stats:\r - Total CPU usage\r - Total memory usage (free vs used, with percentage)\r - Total disk usage (free vs used, with percentage)\r - Top 5 processes by CPU usage\r - Top 5 processes by memory usage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odinnpc/pet_DevOps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/odinnpc/pet_DevOps/issues"
+  },
+  "homepage": "https://github.com/odinnpc/pet_DevOps#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
