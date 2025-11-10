@@ -6,4 +6,11 @@ jobs:
     steps:
       - name: Print Message
         run: echo "Hello, World!"
+      - name: Print some lines
+        run: |
+          echo "Line 1"
+          echo "Line 2"
+          echo "Line 3"
+
+
         
