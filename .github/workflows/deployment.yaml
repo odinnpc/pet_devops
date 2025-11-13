@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  build:                
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Get the repository code
@@ -14,23 +14,23 @@ jobs:
       - name: Run tests
         run: npm test
   lint:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Get the repository code
-          uses: actions/checkout@v5
-        - name: Install dependencies
-          run: npm ci
-        - name: Run linter
-          run: npm run lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repository code
+        uses: actions/checkout@v5
+      - name: Install dependencies
+        run: npm ci
+      - name: Run linter
+        run: npm run lint
   build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Get the repository code
-          uses: actions/checkout@v5
-        - name: Install dependencies
-          run: npm ci
-        - name: Build project
-          run: npm run build
-        - name: Confirm build completion  
-          run: echo "Build completed successfully!"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repository code
+        uses: actions/checkout@v5
+      - name: Install dependencies
+        run: npm ci
+      - name: Build project
+        run: npm run build
+      - name: Confirm build completion
+        run: echo "Build completed successfully!"
 
