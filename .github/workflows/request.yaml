@@ -1,0 +1,12 @@
+name: Print pull request context
+on:
+  workflow_dispatch:
+  pull_request:
+jobs:
+  print-pr-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print PR Context
+        run: |
+          echo "Pull Request Context:"
+          echo "${{ toJson(github.event.pull_request) }}"
