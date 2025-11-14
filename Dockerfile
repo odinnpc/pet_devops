@@ -15,9 +15,9 @@ RUN npm ci --only=production
 
 COPY . .
 
-#######################
+######################
 ## runtime stage
-#######################
+######################
 FROM node:18-alpine AS runtime
 
 WORKDIR /app
