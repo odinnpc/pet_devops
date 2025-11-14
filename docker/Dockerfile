@@ -23,7 +23,7 @@ FROM node:18-alpine AS runtime
 WORKDIR /app
 
 
-LABEL org.opencontainers.image.title="your-project-name" \
+LABEL org.opencontainers.image.title="pet_devops" \
       org.opencontainers.image.description="Simple app to demonstrate Docker/DevOps skills" \
       org.opencontainers.image.url="https://github.com/your/repo" \
       org.opencontainers.image.licenses="MIT"
