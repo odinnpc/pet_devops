@@ -23,3 +23,6 @@ projects.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+**/.aws
+**/.terraform
+**/.terraform.lock.hcl
