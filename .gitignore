@@ -22,5 +22,5 @@ yarn-error.log*
 **/.aws
 **/.terraform
 **/.terraform.lock.hcl
-*.tfstate.backup
-*.tfstate
+terraform.tfstate.backup
+terraform.tfstate

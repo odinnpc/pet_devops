@@ -46,3 +46,11 @@ resource "aws_instance" "ubuntu_nginx" {
     project = "terraform_lunch"
   }
 }
+resource "aws_eip" "my_permanent_ip" {
+  instance = aws_instance.ubuntu_nginx.id
+  domain   = "vpc"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
