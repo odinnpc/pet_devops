@@ -82,7 +82,7 @@ output "vpc_cidr_block" {
   value = data.aws_vpc.default.cidr_block
 }
 
-# Получаем default Security Group для VPC
+# Get default Security Group for VPC
 data "aws_security_group" "default_sg" {
   filter {
     name   = "vpc-id"
