@@ -2,15 +2,19 @@ resource "aws_security_group" "nginx_sg" {
   name        = "nginx_security_group"
   description = "Allow HTTP inbound"
 
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+dynamic "ingress" {
+    for_each = [80, 443]
+
+    content {
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
   }
-   ingress {
-    from_port   = 443
-    to_port     = 443
+  ingress {
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -33,14 +37,8 @@ resource "aws_instance" "ubuntu_nginx" {
   instance_type          = "t3.micro"
   key_name               = "super_duper"
   vpc_security_group_ids = [aws_security_group.nginx_sg.id]
-  user_data = <<-EOF
-              #!/bin/bash
-              sudo apt-get update
-              sudo apt-get install -y nginx
-              sudo systemctl start nginx
-              sudo systemctl enable nginx
-              EOF
-
+  user_data = templatefile("file_for_terraform.sh.tpl", {
+})
   tags = {
     Name = "instance_terraform"
     #Name = format("instance_terraform_%02d", count.index + 1) # differentiate instances if count > 1
